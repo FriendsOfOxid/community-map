@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Leaflet.markercluster | Oxid Community Map</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Leaflet.markercluster" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A map filled with people being involved in Oxid esales. Hosted on GitHub, which allows everyone to add their map entries. Join!" />
+<meta property="og:description" content="A map filled with people being involved in Oxid esales. Hosted on GitHub, which allows everyone to add their map entries. Join!" />
+<link rel="canonical" href="http://localhost:4000/assets/vendor/leaflet.markercluster/" />
+<meta property="og:url" content="http://localhost:4000/assets/vendor/leaflet.markercluster/" />
+<meta property="og:site_name" content="Oxid Community Map" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Leaflet.markercluster" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A map filled with people being involved in Oxid esales. Hosted on GitHub, which allows everyone to add their map entries. Join!","headline":"Leaflet.markercluster","url":"http://localhost:4000/assets/vendor/leaflet.markercluster/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Oxid Community Map" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Oxid Community Map</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/assets/vendor/leaflet.markercluster/CHANGELOG.html">Leaflet.markercluster</a><a class="page-link" href="/assets/vendor/leaflet.edgebuffer/">Leaflet.EdgeBuffer</a><a class="page-link" href="/assets/vendor/leaflet.markercluster/">Leaflet.markercluster</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Leaflet.markercluster</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="leafletmarkercluster">Leaflet.markercluster</h1>
+
+<p>Provides Beautiful Animated Marker Clustering functionality for <a href="http://leafletjs.com">Leaflet</a>, a JS library for interactive maps.</p>
+
+<p><em>Requires Leaflet 1.0.0</em></p>
+
+<p><img src="example/map.png" alt="cluster map example" /></p>
+
+<p>For a Leaflet 0.7 compatible version, <a href="https://github.com/Leaflet/Leaflet.markercluster/tree/leaflet-0.7">use the leaflet-0.7 branch</a><br />
+For a Leaflet 0.5 compatible version, <a href="https://github.com/Leaflet/Leaflet.markercluster/archive/b128e950d8f5d7da5b60bd0aa9a88f6d3dd17c98.zip">Download b128e950</a><br />
+For a Leaflet 0.4 compatible version, <a href="https://github.com/Leaflet/Leaflet.markercluster/archive/0.2.zip">Download the 0.2 release</a></p>
+
+<!---
+TOC created with gh-md-toc
+https://github.com/ekalinin/github-markdown-toc
+removed link to h1 and indented back 2 spaces all links.
+-->
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+  <li><a href="#using-the-plugin">Using the plugin</a>
+    <ul>
+      <li><a href="#building-testing-and-linting-scripts">Building, testing and linting scripts</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#usage">Usage</a></li>
+    </ul>
+  </li>
+  <li><a href="#options">Options</a>
+    <ul>
+      <li><a href="#defaults">Defaults</a></li>
+      <li><a href="#customising-the-clustered-markers">Customising the Clustered Markers</a></li>
+      <li><a href="#all-options">All Options</a>
+        <ul>
+          <li><a href="#enabled-by-default-boolean-options">Enabled by default (boolean options)</a></li>
+          <li><a href="#other-options">Other options</a></li>
+          <li><a href="#chunked-addlayers-options">Chunked addLayers options</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#events">Events</a>
+    <ul>
+      <li><a href="#additional-markerclustergroup-events">Additional MarkerClusterGroup Events</a></li>
+    </ul>
+  </li>
+  <li><a href="#methods">Methods</a>
+    <ul>
+      <li><a href="#group-methods">Group methods</a>
+        <ul>
+          <li><a href="#adding-and-removing-markers">Adding and removing Markers</a></li>
+          <li><a href="#bulk-adding-and-removing-markers">Bulk adding and removing Markers</a></li>
+          <li><a href="#getting-the-visible-parent-of-a-marker">Getting the visible parent of a marker</a></li>
+          <li><a href="#refreshing-the-clusters-icon">Refreshing the clusters icon</a></li>
+          <li><a href="#other-group-methods">Other Group Methods</a></li>
+        </ul>
+      </li>
+      <li><a href="#clusters-methods">Clusters methods</a>
+        <ul>
+          <li><a href="#getting-the-bounds-of-a-cluster">Getting the bounds of a cluster</a></li>
+          <li><a href="#zooming-to-the-bounds-of-a-cluster">Zooming to the bounds of a cluster</a></li>
+          <li><a href="#other-clusters-methods">Other clusters methods</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#handling-lots-of-markers">Handling LOTS of markers</a></li>
+  <li><a href="#license">License</a></li>
+  <li><a href="#sub-plugins">Sub-plugins</a></li>
+</ul>
+
+<h2 id="using-the-plugin">Using the plugin</h2>
+<p>Include the plugin CSS and JS files on your page after Leaflet files, using your method of choice:</p>
+<ul>
+  <li><a href="https://github.com/Leaflet/Leaflet.markercluster/archive/v1.4.1.zip">Download the <code class="language-plaintext highlighter-rouge">v1.4.1</code> release</a></li>
+  <li>Use unpkg CDN: <code class="language-plaintext highlighter-rouge">https://unpkg.com/leaflet.markercluster@1.4.1/dist/</code></li>
+  <li>Install with npm: <code class="language-plaintext highlighter-rouge">npm install leaflet.markercluster</code></li>
+</ul>
+
+<p>In each case, use files in the <code class="language-plaintext highlighter-rouge">dist</code> folder:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">MarkerCluster.css</code></li>
+  <li><code class="language-plaintext highlighter-rouge">MarkerCluster.Default.css</code> (not needed if you use your own <code class="language-plaintext highlighter-rouge">iconCreateFunction</code> instead of the default one)</li>
+  <li><code class="language-plaintext highlighter-rouge">leaflet.markercluster.js</code> (or <code class="language-plaintext highlighter-rouge">leaflet.markercluster-src.js</code> for the non-minified version)</li>
+</ul>
+
+<h3 id="building-testing-and-linting-scripts">Building, testing and linting scripts</h3>
+<p>Install jake <code class="language-plaintext highlighter-rouge">npm install -g jake</code> then run <code class="language-plaintext highlighter-rouge">npm install</code></p>
+<ul>
+  <li>To check the code for errors and build Leaflet from source, run <code class="language-plaintext highlighter-rouge">jake</code>.</li>
+  <li>To run the tests, run <code class="language-plaintext highlighter-rouge">jake test</code>.</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+<p>See the included examples for usage.</p>
+
+<p>The <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.388.html">realworld example</a> is a good place to start, it uses all of the defaults of the clusterer.
+Or check out the <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html">custom example</a> for how to customise the behaviour and appearance of the clusterer</p>
+
+<h3 id="usage">Usage</h3>
+<p>Create a new MarkerClusterGroup, add your markers to it, then add it to the map</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">markers</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">markerClusterGroup</span><span class="p">();</span>
+<span class="nx">markers</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">getRandomLatLng</span><span class="p">(</span><span class="nx">map</span><span class="p">)));</span>
+<span class="p">...</span> <span class="nx">Add</span> <span class="nx">more</span> <span class="nx">layers</span> <span class="p">...</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">markers</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="options">Options</h2>
+<h3 id="defaults">Defaults</h3>
+<p>By default the Clusterer enables some nice defaults for you:</p>
+<ul>
+  <li><strong>showCoverageOnHover</strong>: When you mouse over a cluster it shows the bounds of its markers.</li>
+  <li><strong>zoomToBoundsOnClick</strong>: When you click a cluster we zoom to its bounds.</li>
+  <li><strong>spiderfyOnMaxZoom</strong>: When you click a cluster at the bottom zoom level we spiderfy it so you can see all of its markers. (<em>Note: the spiderfy occurs at the current zoom level if all items within the cluster are still clustered at the maximum zoom level or at zoom specified by <code class="language-plaintext highlighter-rouge">disableClusteringAtZoom</code> option</em>)</li>
+  <li><strong>removeOutsideVisibleBounds</strong>: Clusters and markers too far from the viewport are removed from the map for performance.</li>
+  <li><strong>spiderLegPolylineOptions</strong>: Allows you to specify <a href="http://leafletjs.com/reference.html#polyline-options">PolylineOptions</a> to style spider legs. By default, they are <code class="language-plaintext highlighter-rouge">{ weight: 1.5, color: '#222', opacity: 0.5 }</code>.</li>
+</ul>
+
+<p>You can disable any of these as you want in the options when you create the MarkerClusterGroup:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">markers</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">markerClusterGroup</span><span class="p">({</span>
+	<span class="na">spiderfyOnMaxZoom</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+	<span class="na">showCoverageOnHover</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+	<span class="na">zoomToBoundsOnClick</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="customising-the-clustered-markers">Customising the Clustered Markers</h3>
+<p>As an option to MarkerClusterGroup you can provide your own function for creating the Icon for the clustered markers.
+The default implementation changes color at bounds of 10 and 100, but more advanced uses may require customising this.
+You do not need to include the .Default css if you go this way.
+You are passed a MarkerCluster object, you’ll probably want to use <code class="language-plaintext highlighter-rouge">getChildCount()</code> or <code class="language-plaintext highlighter-rouge">getAllChildMarkers()</code> to work out the icon to show.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">markers</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">markerClusterGroup</span><span class="p">({</span>
+	<span class="na">iconCreateFunction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cluster</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">L</span><span class="p">.</span><span class="nx">divIcon</span><span class="p">({</span> <span class="na">html</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;b&gt;</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">cluster</span><span class="p">.</span><span class="nx">getChildCount</span><span class="p">()</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;/b&gt;</span><span class="dl">'</span> <span class="p">});</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>Check out the <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html">custom example</a> for an example of this.</p>
+
+<p>If you need to update the clusters icon (e.g. they are based on markers real-time data), use the method <a href="#refreshing-the-clusters-icon">refreshClusters()</a>.</p>
+
+<h3 id="all-options">All Options</h3>
+<h4 id="enabled-by-default-boolean-options">Enabled by default (boolean options)</h4>
+<ul>
+  <li><strong>showCoverageOnHover</strong>: When you mouse over a cluster it shows the bounds of its markers.</li>
+  <li><strong>zoomToBoundsOnClick</strong>: When you click a cluster we zoom to its bounds.</li>
+  <li><strong>spiderfyOnMaxZoom</strong>: When you click a cluster at the bottom zoom level we spiderfy it so you can see all of its markers. (<em>Note: the spiderfy occurs at the current zoom level if all items within the cluster are still clustered at the maximum zoom level or at zoom specified by <code class="language-plaintext highlighter-rouge">disableClusteringAtZoom</code> option</em>).</li>
+  <li><strong>removeOutsideVisibleBounds</strong>: Clusters and markers too far from the viewport are removed from the map for performance.</li>
+  <li><strong>animate</strong>: Smoothly split / merge cluster children when zooming and spiderfying. If <code class="language-plaintext highlighter-rouge">L.DomUtil.TRANSITION</code> is false, this option has no effect (no animation is possible).</li>
+</ul>
+
+<h4 id="other-options">Other options</h4>
+<ul>
+  <li><strong>animateAddingMarkers</strong>: If set to true (and <code class="language-plaintext highlighter-rouge">animate</code> option is also true) then adding individual markers to the MarkerClusterGroup after it has been added to the map will add the marker and animate it into the cluster. Defaults to false as this gives better performance when bulk adding markers. addLayers does not support this, only addLayer with individual Markers.</li>
+  <li><strong>disableClusteringAtZoom</strong>: If set, at this zoom level and below, markers will not be clustered. This defaults to disabled. <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld-maxzoom.388.html">See Example</a>. Note: you may be interested in disabling <code class="language-plaintext highlighter-rouge">spiderfyOnMaxZoom</code> option when using <code class="language-plaintext highlighter-rouge">disableClusteringAtZoom</code>.</li>
+  <li><strong>maxClusterRadius</strong>: The maximum radius that a cluster will cover from the central marker (in pixels). Default 80. Decreasing will make more, smaller clusters. You can also use a function that accepts the current map zoom and returns the maximum cluster radius in pixels.</li>
+  <li><strong>polygonOptions</strong>: Options to pass when creating the L.Polygon(points, options) to show the bounds of a cluster. Defaults to empty, which lets Leaflet use the <a href="http://leafletjs.com/reference.html#path-options">default Path options</a>.</li>
+  <li><strong>singleMarkerMode</strong>: If set to true, overrides the icon for all added markers to make them appear as a 1 size cluster. Note: the markers are not replaced by cluster objects, only their icon is replaced. Hence they still react to normal events, and option <code class="language-plaintext highlighter-rouge">disableClusteringAtZoom</code> does not restore their previous icon (see <a href="https://github.com/Leaflet/Leaflet.markercluster/issues/391">#391</a>).</li>
+  <li><strong>spiderLegPolylineOptions</strong>: Allows you to specify <a href="http://leafletjs.com/reference.html#polyline-options">PolylineOptions</a> to style spider legs. By default, they are <code class="language-plaintext highlighter-rouge">{ weight: 1.5, color: '#222', opacity: 0.5 }</code>.</li>
+  <li><strong>spiderfyDistanceMultiplier</strong>: Increase from 1 to increase the distance away from the center that spiderfied markers are placed. Use if you are using big marker icons (Default: 1).</li>
+  <li><strong>iconCreateFunction</strong>: Function used to create the cluster icon. See <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/15ed12654acdc54a4521789c498e4603fe4bf781/src/MarkerClusterGroup.js#L542">the default implementation</a> or the <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html">custom example</a>.</li>
+  <li><strong>clusterPane</strong>: Map pane where the cluster icons will be added. Defaults to L.Marker’s default (currently ‘markerPane’). <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-pane.html">See the pane example</a>.</li>
+</ul>
+
+<h4 id="chunked-addlayers-options">Chunked addLayers options</h4>
+<p>Options for the <a href="#bulk-adding-and-removing-markers">addLayers</a> method. See <a href="https://github.com/Leaflet/Leaflet.markercluster/issues/357">#357</a> for explanation on how the chunking works.</p>
+<ul>
+  <li><strong>chunkedLoading</strong>: Boolean to split the addLayer<strong>s</strong> processing in to small intervals so that the page does not freeze.</li>
+  <li><strong>chunkInterval</strong>: Time interval (in ms) during which addLayers works before pausing to let the rest of the page process. In particular, this prevents the page from freezing while adding a lot of markers. Defaults to 200ms.</li>
+  <li><strong>chunkDelay</strong>: Time delay (in ms) between consecutive periods of processing for addLayers. Default to 50ms.</li>
+  <li><strong>chunkProgress</strong>: Callback function that is called at the end of each chunkInterval. Typically used to implement a progress indicator, e.g. <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/example/marker-clustering-realworld.50000.html#L33-L49">code in RealWorld 50k</a>. Defaults to null. Arguments:
+    <ol>
+      <li>Number of processed markers</li>
+      <li>Total number of markers being added</li>
+      <li>Elapsed time (in ms)</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="events">Events</h2>
+<p>Leaflet events like <code class="language-plaintext highlighter-rouge">click</code>, <code class="language-plaintext highlighter-rouge">mouseover</code>, etc. are just related to <em>Markers</em> in the cluster.
+To receive events for clusters, listen to <code class="language-plaintext highlighter-rouge">'cluster' + '&lt;eventName&gt;'</code>, ex: <code class="language-plaintext highlighter-rouge">clusterclick</code>, <code class="language-plaintext highlighter-rouge">clustermouseover</code>, <code class="language-plaintext highlighter-rouge">clustermouseout</code>.</p>
+
+<p>Set your callback up as follows to handle both cases:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">markers</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">marker </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">a</span><span class="p">.</span><span class="nx">layer</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">markers</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">clusterclick</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// a.layer is actually a cluster</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">cluster </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">a</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">getAllChildMarkers</span><span class="p">().</span><span class="nx">length</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="additional-markerclustergroup-events">Additional MarkerClusterGroup Events</h3>
+
+<ul>
+  <li><strong>animationend</strong>: Fires when marker clustering/unclustering animation has completed</li>
+  <li><strong>spiderfied</strong>: Fires when overlapping markers get spiderified (Contains <code class="language-plaintext highlighter-rouge">cluster</code> and <code class="language-plaintext highlighter-rouge">markers</code> attributes)</li>
+  <li><strong>unspiderfied</strong>: Fires when overlapping markers get unspiderified (Contains <code class="language-plaintext highlighter-rouge">cluster</code> and <code class="language-plaintext highlighter-rouge">markers</code> attributes)</li>
+</ul>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="group-methods">Group methods</h3>
+
+<h4 id="adding-and-removing-markers">Adding and removing Markers</h4>
+<p><code class="language-plaintext highlighter-rouge">addLayer</code>, <code class="language-plaintext highlighter-rouge">removeLayer</code> and <code class="language-plaintext highlighter-rouge">clearLayers</code> are supported and they should work for most uses.</p>
+
+<h4 id="bulk-adding-and-removing-markers">Bulk adding and removing Markers</h4>
+<p><code class="language-plaintext highlighter-rouge">addLayers</code> and <code class="language-plaintext highlighter-rouge">removeLayers</code> are bulk methods for adding and removing markers and should be favoured over the single versions when doing bulk addition/removal of markers. Each takes an array of markers. You can use <a href="#chunked-addlayers-options">dedicated options</a> to fine-tune the behaviour of <code class="language-plaintext highlighter-rouge">addLayers</code>.</p>
+
+<p>These methods extract non-group layer children from Layer Group types, even deeply nested. <em>However</em>, be noted that:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">chunkProgress</code> jumps backward when <code class="language-plaintext highlighter-rouge">addLayers</code> finds a group (since appending its children to the input array makes the total increase).</li>
+  <li>Groups are not actually added into the MarkerClusterGroup, only their non-group child layers. Therfore, <code class="language-plaintext highlighter-rouge">hasLayer</code> method will return <code class="language-plaintext highlighter-rouge">true</code> for non-group child layers, but <code class="language-plaintext highlighter-rouge">false</code> on any (possibly parent) Layer Group types.</li>
+</ul>
+
+<p>If you are removing a lot of markers it will almost definitely be better to call <code class="language-plaintext highlighter-rouge">clearLayers</code> then call <code class="language-plaintext highlighter-rouge">addLayers</code> to add the markers you don’t want to remove back in. See <a href="https://github.com/Leaflet/Leaflet.markercluster/issues/59#issuecomment-9320628">#59</a> for details.</p>
+
+<h4 id="getting-the-visible-parent-of-a-marker">Getting the visible parent of a marker</h4>
+<p>If you have a marker in your MarkerClusterGroup and you want to get the visible parent of it (Either itself or a cluster it is contained in that is currently visible on the map).
+This will return null if the marker and its parent clusters are not visible currently (they are not near the visible viewpoint)</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">visibleOne</span> <span class="o">=</span> <span class="nx">markerClusterGroup</span><span class="p">.</span><span class="nx">getVisibleParent</span><span class="p">(</span><span class="nx">myMarker</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">visibleOne</span><span class="p">.</span><span class="nx">getLatLng</span><span class="p">());</span>
+</code></pre></div></div>
+
+<h4 id="refreshing-the-clusters-icon">Refreshing the clusters icon</h4>
+<p>If you have <a href="#customising-the-clustered-markers">customized</a> the clusters icon to use some data from the contained markers, and later that data changes, use this method to force a refresh of the cluster icons.
+You can use the method:</p>
+<ul>
+  <li>without arguments to force all cluster icons in the Marker Cluster Group to be re-drawn.</li>
+  <li>with an array or a mapping of markers to force only their parent clusters to be re-drawn.</li>
+  <li>with an L.LayerGroup. The method will look for all markers in it. Make sure it contains only markers which are also within this Marker Cluster Group.</li>
+  <li>with a single marker.
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">markers</span><span class="p">.</span><span class="nx">refreshClusters</span><span class="p">();</span>
+<span class="nx">markers</span><span class="p">.</span><span class="nx">refreshClusters</span><span class="p">([</span><span class="nx">myMarker0</span><span class="p">,</span> <span class="nx">myMarker33</span><span class="p">]);</span>
+<span class="nx">markers</span><span class="p">.</span><span class="nx">refreshClusters</span><span class="p">({</span><span class="na">id_0</span><span class="p">:</span> <span class="nx">myMarker0</span><span class="p">,</span> <span class="na">id_any</span><span class="p">:</span> <span class="nx">myMarker33</span><span class="p">});</span>
+<span class="nx">markers</span><span class="p">.</span><span class="nx">refreshClusters</span><span class="p">(</span><span class="nx">myLayerGroup</span><span class="p">);</span>
+<span class="nx">markers</span><span class="p">.</span><span class="nx">refreshClusters</span><span class="p">(</span><span class="nx">myMarker</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>The plugin also adds a method on L.Marker to easily update the underlying icon options and refresh the icon.
+If passing a second argument that evaluates to <code class="language-plaintext highlighter-rouge">true</code>, the method will also trigger a <code class="language-plaintext highlighter-rouge">refreshCluster</code> on the parent MarkerClusterGroup for that single marker.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Use as many times as required to update markers,</span>
+<span class="c1">// then call refreshClusters once finished.</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">markersSubArray</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">markersSubArray</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">refreshIconOptions</span><span class="p">(</span><span class="nx">newOptionsMappingArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nx">markers</span><span class="p">.</span><span class="nx">refreshClusters</span><span class="p">(</span><span class="nx">markersSubArray</span><span class="p">);</span>
+
+<span class="c1">// If updating only one marker, pass true to</span>
+<span class="c1">// refresh this marker's parent clusters right away.</span>
+<span class="nx">myMarker</span><span class="p">.</span><span class="nx">refreshIconOptions</span><span class="p">(</span><span class="nx">optionsMap</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> 
+</code></pre></div></div>
+
+<h4 id="other-group-methods">Other Group Methods</h4>
+<ul>
+  <li><strong>hasLayer</strong>(layer): Returns true if the given layer (marker) is in the MarkerClusterGroup.</li>
+  <li><strong>zoomToShowLayer</strong>(layer, callback): Zooms to show the given marker (spiderfying if required), calls the callback when the marker is visible on the map.</li>
+</ul>
+
+<h3 id="clusters-methods">Clusters methods</h3>
+<p>The following methods can be used with clusters (not the group). They are typically used for event handling.</p>
+
+<h4 id="getting-the-bounds-of-a-cluster">Getting the bounds of a cluster</h4>
+<p>When you receive an event from a cluster you can query it for the bounds.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">markers</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">clusterclick</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">latLngBounds</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>You can also query for the bounding convex polygon.
+See <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-convexhull.html">example/marker-clustering-convexhull.html</a> for a working example.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">markers</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">clusterclick</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L</span><span class="p">.</span><span class="nx">polygon</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">getConvexHull</span><span class="p">()));</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="zooming-to-the-bounds-of-a-cluster">Zooming to the bounds of a cluster</h4>
+<p>When you receive an event from a cluster you can zoom to its bounds in one easy step.
+If all of the markers will appear at a higher zoom level, that zoom level is zoomed to instead.
+<code class="language-plaintext highlighter-rouge">zoomToBounds</code> takes an optional argument to pass <a href="http://leafletjs.com/reference.html#map-fitboundsoptions">options to the resulting <code class="language-plaintext highlighter-rouge">fitBounds</code> call</a>.</p>
+
+<p>See <a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-zoomtobounds.html">marker-clustering-zoomtobounds.html</a> for a working example.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">markers</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">clusterclick</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">a</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">zoomToBounds</span><span class="p">({</span><span class="na">padding</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="other-clusters-methods">Other clusters methods</h4>
+<ul>
+  <li><strong>getChildCount</strong>: Returns the total number of markers contained within that cluster.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>**getAllChildMarkers(storage: array</td>
+          <td>undefined, ignoreDraggedMarker: boolean</td>
+          <td>undefined)**: Returns an array of all markers contained within this cluster (storage will be used if provided). If ignoreDraggedMarker is true and there is currently a marker dragged, the dragged marker will not be included in the array.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>spiderfy</strong>: Spiderfies the child markers of this cluster</li>
+  <li><strong>unspiderfy</strong>: Unspiderfies a cluster (opposite of spiderfy)</li>
+</ul>
+
+<h2 id="handling-lots-of-markers">Handling LOTS of markers</h2>
+<p>The Clusterer can handle 10,000 or even 50,000 markers (in chrome). IE9 has some issues with 50,000.</p>
+<ul>
+  <li><a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.10000.html">realworld 10,000 example</a></li>
+  <li><a href="https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.50000.html">realworld 50,000 example</a></li>
+</ul>
+
+<p>Note: these two examples use the <code class="language-plaintext highlighter-rouge">chunkedLoading</code> option set to true in order to avoid locking the browser for a long time.</p>
+
+<h2 id="license">License</h2>
+
+<p>Leaflet.markercluster is free software, and may be redistributed under the MIT-LICENSE.</p>
+
+<p><a href="https://travis-ci.org/Leaflet/Leaflet.markercluster"><img src="https://travis-ci.org/Leaflet/Leaflet.markercluster.png?branch=master" alt="Build Status" /></a></p>
+
+<h2 id="sub-plugins">Sub-plugins</h2>
+<p>Leaflet.markercluster plugin is very popular and as such it generates high and
+diverse expectations for increased functionalities.</p>
+
+<p>If you are in that case, be sure to have a look first at the repository
+<a href="https://github.com/Leaflet/Leaflet.markercluster/issues">issues</a> in case what
+you are looking for would already be discussed, and some workarounds would be proposed.</p>
+
+<p>Check also the below sub-plugins:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Plugin</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Maintainer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/ghybs/Leaflet.FeatureGroup.SubGroup">Leaflet.FeatureGroup.SubGroup</a></td>
+      <td style="text-align: left">Creates a Feature Group that adds its child layers into a parent group when added to a map (e.g. through L.Control.Layers). Typical usage is to dynamically add/remove groups of markers from Marker Cluster.</td>
+      <td style="text-align: left"><a href="https://github.com/ghybs">ghybs</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/ghybs/Leaflet.MarkerCluster.LayerSupport">Leaflet.MarkerCluster.LayerSupport</a></td>
+      <td style="text-align: left">Brings compatibility with L.Control.Layers and other Leaflet plugins. I.e. everything that uses direct calls to map.addLayer and map.removeLayer.</td>
+      <td style="text-align: left"><a href="https://github.com/ghybs">ghybs</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/ghybs/Leaflet.MarkerCluster.Freezable">Leaflet.MarkerCluster.Freezable</a></td>
+      <td style="text-align: left">Adds the ability to freeze clusters at a specified zoom. E.g. freezing at maxZoom + 1 makes as if clustering was programmatically disabled.</td>
+      <td style="text-align: left"><a href="https://github.com/ghybs">ghybs</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/adammertel/Leaflet.MarkerCluster.PlacementStrategies">Leaflet.MarkerCluster.PlacementStrategies</a></td>
+      <td style="text-align: left">Implements new strategies to position clustered markers (eg: clock, concentric circles, …). Recommended to use with circleMarkers. <a href="https://adammertel.github.io/Leaflet.MarkerCluster.PlacementStrategies/demo/demo1.html">Demo</a></td>
+      <td style="text-align: left"><a href="https://github.com/adammertel">adammertel</a> / <a href="http://carto.univie.ac.at/">UNIVIE</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/adammertel/Leaflet.MarkerCluster.List">Leaflet.MarkerCluster.List</a></td>
+      <td style="text-align: left">Displays child elements in a list. Suitable for mobile devices. <a href="https://adammertel.github.io/Leaflet.MarkerCluster.List/demo/demo1.html">Demo</a></td>
+      <td style="text-align: left"><a href="https://github.com/adammertel">adammertel</a> / <a href="http://carto.univie.ac.at/">UNIVIE</a></td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Oxid Community Map</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Oxid Community Map</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A map filled with people being involved in Oxid esales. Hosted on GitHub, which allows everyone to add their map entries. Join!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
