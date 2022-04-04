@@ -2,7 +2,7 @@
 
 The project is hosted at GitHub, which allows for everyone to add and manage their map entries by themselves! This is pretty cool.
 
-Learn about 3 ways how to manage your entry:
+Learn about three ways how to manage your entry:
 
 ## 1. Send a pull request
 
@@ -12,24 +12,26 @@ __This is the best option:__ fork the repo, add or update your entry and send a 
 
 ## 2. Open an issue
 
-Second best option: if you’re not familiar with forking and pull requests, just open a [GitHub issue](https://github.com/FriendsOfREDAXO/community/issues) with your data inside. We’ll take care and add your data to the map.
+Second best option: if you’re not familiar with forking and pull requests, just open a [GitHub issue](https://github.com/FriendsOfOxid/community/issues) with your data inside. We’ll take care and add your data to the map.
 
 ## 3. Contact us
 
-Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you do not feel comfortable to open an issue containing your data, just send it to us. __Email:__ _friendsof [at] redaxo.org_
+Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you do not feel comfortable to open an issue containing your data, just send it to us. __Twitter:__ _@FriendsOfOxid_
 
 Btw: what data? 👇
 
 ## Data structure
 
-Have a look at the example file [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/master/_directory/.data.example.yml). Aside from dummy data it contains a lot of __helpful comments__ on how to structure your data!
+Have a look at the example file [`.data.example.yml`](https://github.com/FriendsOfOxid/community/blob/master/_directory/.data.example.yml). Aside from dummy data it contains a lot of __helpful comments__ on how to structure your data!
 
-For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your name so that you can find it later and get a cool URL for it! (just like [Jan](https://friendsofredaxo.github.io/community/#dergel) has one). Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com or your GitHub profile picture).  
+For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your real or company name so that you can find it later and get a cool URL for it! (just like [Rüdiger](https://friendsofoxid.github.io/community/#gn2) has one). Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com or your GitHub profile picture).  
 
 If you're not sure, take a look at existing user folders to see how to do it. And no worries, the data is always save, you cannot do anything wrong! 
 
 ## What data should I provide?
 
 The map requires your name or nickname and your geo position. Everything else is optional. Of course we'd all love to read more about you and maybe see your picture! But it’s completely up to you whether to provide it or not!
+
+As we want to see real persons and faces instead of company names and logos, please provide your profile picture and your real name. In case of a smaller company, we advise to upload a picture of the boss or a group photo plus several names.
 
 ❤️
