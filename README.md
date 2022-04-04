@@ -30,10 +30,11 @@ Also if your map is live we’d be grateful to receive a quick note from you: _f
 
 ## How to run the map on my local machine?
 
-See [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/master/SETUP.md) for instructions.
+See [SETUP.md](https://github.com/FriendsOfOxid/community-map/blob/master/SETUP.md) for instructions.
 
 ## What else?
 
-Many thanks to the REDAXO community for supporting us with this great piece of software!
-You should join our Slack chat. It’s full of nice REDAXO people! ✌️  
+Many thanks to the REDAXO community for supporting us with this great piece of software! 
+
+You should join their Slack chat. It’s full of nice REDAXO people! ✌️  
 Provide your email to receive an invitation: https://redaxo.org/slack/
