@@ -26,5 +26,5 @@ longitude: 13.2654125
 # provide image file from current folder (like 'johndoe.jpg'), gravatar url (generated via https://3v4l.org/OXG7H) or any other URL
 # should be square and about 200-300 px size!
 # please no logos - we just want to see faces!
-image: _matene.jpg
+image: https://media-exp1.licdn.com/dms/image/C4E03AQFz7KgV8MUrig/profile-displayphoto-shrink_800_800/0/1605976268834?e=1655337600&v=beta&t=krivxLQXn6vBAPmujvav3AJOg81jYL7znnDmc7DMPZM
 ---
