@@ -8,19 +8,18 @@ name: Jozef Nano
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-  - https://www.askinto.eu
+- https://www.askinto.eu
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Ponúkame možnosť reálizácie vaších projektov za pomoci najmodernejších technologií v oblastiach IT, CRM, mobilných aplikácií, e-shopov online marketingu."
+bio: "Nabízíme možnost realizace vašich projektů za pomocí nejmodernějších technologií v oblasti IT, CRM, mobilních aplikací, e-shopů a online marketingu."
 
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 48.1494635
-longitude: 17.1037744
-
+latitude: 49.276890
+longitude: 16.998230
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg'), gravatar url (generated via https://3v4l.org/OXG7H) or any other URL
